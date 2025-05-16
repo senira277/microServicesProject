@@ -1,0 +1,17 @@
+services:
+  mongodb:
+    image: mongo:7.0.5
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=2002
+      - Mongo_INITDB_DATABASE=product-service
+    volumes:
+      - mongodb_data:/data/db
+
+# Define named volumes
+volumes:
+  mongodb_data:
+    name: mongodb_data
